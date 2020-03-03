@@ -12,13 +12,14 @@ class CarDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_car_details)
-
-       car_name.text = getIntent().getStringExtra("CARNAME")
+        val person = getIntent().getSerializableExtra("Person") as? Person
+        binding.personDetails = person
+       /*car_name.text = getIntent().getStringExtra("CARNAME")
         car_description.text = getIntent().getStringExtra("CARDESC")
-
         var photo =(getIntent().getStringExtra("PHOTO"))
+        */
         Glide.with(this)
-            .load(photo)
+            .load(person?.image)
             .into(iv_foto)
 
     }
