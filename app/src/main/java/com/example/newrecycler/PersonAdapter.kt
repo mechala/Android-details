@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.layout_item_view.view.*
 
-class CarAdapter(var items : ArrayList<Person>, var clickListner: OnCarItemClickListner) : RecyclerView.Adapter<CarViewHolder>(){
+class CarAdapter(var items : MutableList<Person>, var clickListner: OnCarItemClickListner) : RecyclerView.Adapter<CarViewHolder>(){
     override fun getItemCount(): Int {
         return items.size
     }
